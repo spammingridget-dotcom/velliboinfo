@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vellibo Studio Hosting Platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #ffffff;
+    color: #111;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    padding: 20px 40px;
+    background: #FFD84D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+nav h1 {
+    margin: 0;
+    color: #111;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+nav a {
+    text-decoration: none;
+    color: #111;
+    margin-left: 22px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 160px;
+    text-align: center;
+    padding-bottom: 100px;
+    background: linear-gradient(135deg, #FFD84D, #FFCE00);
+}
+
+.hero h2 {
+    font-size: 50px;
+    font-weight: 900;
+    color: #000;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #111;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 16px 32px;
+    background: #000;
+    color: white;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.cta-btn:hover {
+    background: #2b2b2b;
+    transform: scale(1.05);
+}
+
+/* Features */
+.section {
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h3 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff9d6;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+/* Pricing */
+.pricing {
+    margin-top: 40px;
+    background: linear-gradient(135deg, #FFCE00, #FFD84D);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.price-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.price-box h2 {
+    font-size: 42px;
+    margin: 0;
+    color: #000;
+}
+
+.price-box p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.price-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #000;
+    color: white;
+    font-size: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.price-btn:hover {
+    background: #333;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 40px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <h1>Vellibo</h1>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Docs</a>
+        <a href="#">Login</a>
+        <a href="#">Start Trial</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h2>Run Your Studio With Power, Control & Professionalism</h2>
+    <p>The all-in-one honey-smooth platform for hosting your studio, managing your team, organizing projects, hiring developers & more.</p>
+    <a href="#" class="cta-btn">Start Your Free 1-Month Trial</a>
+</section>
+
+<section class="section">
+    <h3>Everything Your Studio Needs 🍯</h3>
+
+    <div class="feature-grid">
+        <div class="card"><b>✔ Unlimited Developers</b><br>Invite, manage, promote, demote or remove team members instantly.</div>
+        <div class="card"><b>✔ Application System</b><br>Hire new developers with custom forms & review tools.</div>
+        <div class="card"><b>✔ Project Management</b><br>Create tasks, checklists, commissions & full workflows.</div>
+        <div class="card"><b>✔ Developer Portal</b><br>Central hub for your entire team to collaborate.</div>
+        <div class="card"><b>✔ Subdomain Included</b><br>YourStudio.developmentz.site — clean & professional.</div>
+        <div class="card"><b>✔ Brain Dump Boards</b><br>Store ideas, concepts, and early-stage planning easily.</div>
+    </div>
+</section>
+
+<section class="pricing">
+    <div class="price-box">
+        <h2>Only 7€ / Year</h2>
+        <p>Plus a FREE 1-Month Trial. No limits. No hidden fees.</p>
+        <a href="#" class="price-btn">Start Free Trial</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Vellibo Studio Hosting Platform • All Rights Reserved
+</footer>
+
+</body>
+</html>
