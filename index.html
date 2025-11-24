@@ -1,189 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Vellibo Studio Hosting Platform</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vellibo – The Ultimate Studio Hosting Platform</title>
 
 <style>
+    body {
+        margin: 0;
+        background: #fff7d4;
+        font-family: "Inter", sans-serif;
+        color: #1a1a1a;
+        overflow-x: hidden;
+    }
 
-body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: #ffffff;
-    color: #111;
-}
+    /* Background art */
+    .bg-art {
+        position: fixed;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 900px;
+        opacity: 0.1;
+        z-index: -1;
+        animation: float 9s infinite ease-in-out;
+    }
+    @keyframes float {
+        0% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(25px); }
+        100% { transform: translateX(-50%) translateY(0); }
+    }
 
-/* Navigation */
-nav {
-    width: 100%;
-    padding: 20px 40px;
-    background: #FFD84D;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-}
+    /* Logo */
+    .logo {
+        width: 180px;
+        display: block;
+        margin: 120px auto 10px;
+        animation: fadeIn 2s ease, glow 3s ease-in-out infinite;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.85); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes glow {
+        0% { filter: drop-shadow(0 0 0px #ffb800); }
+        50% { filter: drop-shadow(0 0 18px #ffd45c); }
+        100% { filter: drop-shadow(0 0 0px #ffb800); }
+    }
 
-nav h1 {
-    margin: 0;
-    color: #111;
-    font-size: 26px;
-    font-weight: 800;
-}
+    h1 {
+        text-align: center;
+        margin: 0;
+        font-size: 56px;
+        color: #e2a400;
+        font-weight: 900;
+        text-shadow: 0 0 8px rgba(255,185,0,0.3);
+        animation: slideDown 1.5s ease;
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-nav a {
-    text-decoration: none;
-    color: #111;
-    margin-left: 22px;
-    font-weight: 600;
-    transition: 0.2s;
-}
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        font-size: 20px;
+        line-height: 1.7;
+        color: #2f2f2f;
+        animation: fadeText 2s ease;
+    }
+    @keyframes fadeText {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
 
-nav a:hover {
-    color: #ffffff;
-}
+    .section-title {
+        margin-top: 60px;
+        margin-bottom: 15px;
+        font-size: 32px;
+        color: #e2a400;
+        font-weight: 800;
+        text-shadow: 0 0 5px rgba(255,185,0,0.3);
+        text-align: center;
+    }
 
-/* Hero Section */
-.hero {
-    padding-top: 160px;
-    text-align: center;
-    padding-bottom: 120px;
-    background: linear-gradient(135deg, #FFD84D, #FFCE00);
-}
+    .divider {
+        width: 120px;
+        height: 6px;
+        background: linear-gradient(90deg, #ffcf33, #ffb800);
+        border-radius: 10px;
+        margin: 20px auto 50px;
+        animation: glowbar 4s infinite ease-in-out;
+    }
+    @keyframes glowbar {
+        0% { box-shadow: 0 0 0px #ffb800; }
+        50% { box-shadow: 0 0 16px #ffd45c; }
+        100% { box-shadow: 0 0 0px #ffb800; }
+    }
 
-.hero h2 {
-    font-size: 52px;
-    font-weight: 900;
-    color: #000;
-}
+    strong {
+        color: #e2a400;
+    }
 
-.hero p {
-    margin-top: 10px;
-    font-size: 20px;
-    color: #222;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Features Section */
-.section {
-    padding: 80px 40px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.section h3 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: 800;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-    gap: 30px;
-}
-
-.card {
-    background: #fff9d6;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    transition: 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-}
-
-/* Pricing Showcase (no CTA) */
-.pricing {
-    margin-top: 40px;
-    background: linear-gradient(135deg, #FFCE00, #FFD84D);
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.price-box {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    display: inline-block;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
-
-.price-box h2 {
-    font-size: 42px;
-    margin: 0;
-    color: #000;
-}
-
-.price-box p {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-/* Footer */
-footer {
-    margin-top: 60px;
-    padding: 40px;
-    text-align: center;
-    background: #000;
-    color: #fff;
-    font-size: 16px;
-}
-
+    footer {
+        margin-top: 80px;
+        background: #fff0a3;
+        padding: 25px;
+        text-align: center;
+        color: #6a5400;
+        font-size: 16px;
+        border-top: 1px solid #ffe48a;
+    }
 </style>
 </head>
+
 <body>
 
-<nav>
-    <h1>Vellibo</h1>
-    <div>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Features</a>
-        <a href="#">Contact</a>
-    </div>
-</nav>
+<img src="detailedlogo.png" class="bg-art" alt="Vellibo Background Art">
 
-<section class="hero">
-    <h2>Your Studio, Elevated.</h2>
-    <p>The honey-smooth platform built to host, manage, and empower your entire development studio with elegance and professionalism.</p>
-</section>
+<img src="logo.png" class="logo" alt="Vellibo Logo">
+<h1>VELLIBO</h1>
 
-<section class="section">
-    <h3>What Vellibo Gives You 🍯</h3>
+<div class="container">
 
-    <div class="feature-grid">
-        <div class="card"><b>✔ Unlimited Developers</b><br>Invite and manage as many team members as your studio needs.</div>
-        <div class="card"><b>✔ Application System</b><br>Collect staff applicants, review them, and expand your team effortlessly.</div>
-        <div class="card"><b>✔ Project Management</b><br>Create tasks, commissions, and full workflows with clarity.</div>
-        <div class="card"><b>✔ Developer Portal</b><br>A central space for your entire team to coordinate and progress.</div>
-        <div class="card"><b>✔ Free Subdomain</b><br>YourStudio.developmentz.site — clean, professional, and ready.</div>
-        <div class="card"><b>✔ Brain-Dump Boards</b><br>Perfect for idea storage, concept planning, and early development phases.</div>
-    </div>
-</section>
+<p style="text-align:center; font-size:24px; font-weight:600; margin-top:15px;">
+    🚀 INTRODUCING: <strong>VELLIBO</strong> – The Ultimate Studio Hosting Platform!
+</p>
 
-<section class="pricing">
-    <div class="price-box">
-        <h2>Only 7€ / Year</h2>
-        <p>Affordable, reliable, and designed for studios of any size.</p>
-        <p><i>This page is a showcase trailer — features shown for presentation.</i></p>
-    </div>
-</section>
+<p>
+Run your ENTIRE development studio in one place — fast, organized, and insanely affordable.
+
+Whether you're building games, managing developers, or running a full production team…  
+👉 <strong>Vellibo gives you EVERY tool you need.</strong>
+</p>
+
+<div class="section-title">🏢🌐 Host Your Studio Like a REAL Organization</div>
+<div class="divider"></div>
+
+<p>
+Turn your team into a fully structured, professional studio hub:
+<br><br>
+🔸 Unlimited developers<br>
+🔸 Unlimited projects<br>
+🔸 Instant setup<br>
+🔸 Complete studio control
+</p>
+
+<div class="section-title">👥🔥 Manage Your Developers Like a Boss</div>
+<div class="divider"></div>
+
+<p>
+Vellibo gives you TRUE studio management power:
+<br><br>
+➕ Add unlimited developers<br>
+🔧 Assign roles<br>
+⬇ Demote members<br>
+❌ Fire instantly<br>
+🔐 Permission-based system<br>
+⚡ Full admin control<br>
+<br>
+<strong>Your studio. Your rules.</strong>
+</p>
+
+<div class="section-title">✏📌 Applications & Hiring Made Easy</div>
+<div class="divider"></div>
+
+<p>
+Create your own application forms and hire new developers with one click:
+<br><br>
+✨ Staff applications<br>
+✨ Developer recruitment<br>
+✨ Commissions<br>
+✨ Team expansion<br>
+✨ Role-based approval
+</p>
+
+<div class="section-title">📋🧠 Everything You Need to Run a Studio</div>
+<div class="divider"></div>
+
+<p>
+Vellibo includes a full suite of powerful tools:
+<br><br>
+📌 Checklists<br>
+✏ Application forms<br>
+🧠 Brain-dump boards<br>
+📊 Analytics & charts<br>
+💸 Payment/commission planning<br>
+📁 Developer portals<br>
+💻 Website hosting tools<br>
+📄 Forms<br>
+🛠 Task & commission manager<br>
+<br>
+All in one clean, professional platform.
+</p>
+
+<div class="section-title">🌍🔗 FREE Subdomain Included</div>
+<div class="divider"></div>
+
+<p>
+Every studio gets:
+<br><br>
+🔗 <strong>yourstudio.developmentz.site</strong><br><br>
+Perfect for sharing with your team, clients, and community.
+</p>
+
+<div class="section-title">💶🔥 ONLY 7€ / YEAR + Free 1-Month Trial</div>
+<div class="divider"></div>
+
+<p>
+Yes, really.
+<br><br>
+🎁 Free 1-month trial<br>
+💶 Just 7€ per YEAR<br>
+⛔ No hidden fees<br>
+⛔ No limits<br>
+⛔ No nonsense<br><br>
+A full studio management platform… <strong>cheaper than a sandwich.</strong>
+</p>
+
+<div class="section-title">🚀🌟 Run your studio the smart way.<br>Run it on <strong>VELLIBO</strong>.</div>
+
+</div>
 
 <footer>
-    © 2025 Vellibo Studio Hosting Platform • Trailer Page • All Rights Reserved
+    © 2025 Vellibo Studio Hosting Platform — All Rights Reserved
 </footer>
 
 </body>
 </html>
-
